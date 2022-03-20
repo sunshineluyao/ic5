@@ -1,0 +1,35 @@
+{
+  "canisters": {
+    "ic5": {
+      "main": "src/ic5/main.mo",
+      "type": "motoko"
+    },
+    "ic5_assets": {
+      "dependencies": [
+        "ic5"
+      ],
+      "frontend": {
+        "entrypoint": "src/ic5_assets/src/index.html"
+      },
+      "source": [
+        "src/ic5_assets/assets",
+        "dist/ic5_assets/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.8.4",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
