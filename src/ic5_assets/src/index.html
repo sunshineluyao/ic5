@@ -3,20 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>ic5</title>
+    <title>MicroBlog</title>
     <base href="/" />
     <link rel="icon" href="favicon.ico" />
-    <link type="text/css" rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
   </head>
+
   <body>
+    <header><h1>MicroBlog</h1></header>
     <main>
-      <img src="logo.png" alt="DFINITY logo" />
-      <form action="#">
-        <label for="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting"></section>
+      <div style="display: flex; flex-direction: column; width: 100%">
+        <!-- follow others -->
+        <label for="follow">Enter Canister ID:</label>
+        <textarea id="follow" rows="1"></textarea>
+        <span id="principal-error"></span>
+        <button id="follow-btn" style="width: 5em">Follow</button>
+
+        <!-- followed list -->
+        <label for="followed">Followed:</label>
+        <table id="followed">
+          <tr>
+            <th>Name</th>
+            <th>CanisterID</th>
+          </tr>
+          <tr>
+            <td>Sunshine</td>
+            <td>123</td>
+          </tr>
+        </table>
+
+        <!-- show specific user content -->
+        <label for="posts-selected">Posts of selected:</label>
+        <section id="posts-selected"></section>
+
+        <!-- post mails -->
+        <label for="message">What do you want to post?</label>
+        <textarea id="message"></textarea>
+        <label for="otp">OTP:</label>
+        <textarea id="otp" rows="1">123456</textarea>
+        <button style="width: 5em" id="post">Post</button>
+        <span id="error"></span>
+        <label for="posts">Posts:</label>
+        <section id="posts"></section>
+      </div>
     </main>
   </body>
 </html>
